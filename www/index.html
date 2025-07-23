@@ -26,12 +26,11 @@
 <body>
     <div class="container">
         <section id="Oval" class="mb-4" >
-            <div class="row">
+            <div class="row" style="margin:0;">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
                         <canvas id="canvasOne" width="700" height="420" style="position: absolute;"></canvas>
-
 
                         <div id="Hood">
                             <div class="square">
@@ -68,21 +67,15 @@
         </section>
 
         <section id="SiriWave" class="mb-4" hidden>
-            <div class="conatiner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-                            <div class="">
-                                <p class="text-start text-light mb-4 siri-message" style="font-size: 28px;">Hello, I am L.U.M.I.N.A</p>
-                                <div id="siri-container"></div>
-                            </div>
-
+            <div class="container-fluid" style="padding:0;">
+                <div class="row" style="margin:0;">
+                    <div class="col-12" style="padding:0;">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 60vh;">
+                            <ul class="siri-message" style="font-size: 1.1rem; color: #fff; list-style: none; padding-left: 0; margin-bottom: 12px; width: 100%; text-align: center;"></ul>
+                            <div id="siri-container"></div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
         </section>

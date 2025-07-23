@@ -39,12 +39,24 @@ $(document).ready(function () {
     });
 
     // mic button click event
-
     $("#MicBtn").click(function () { 
-        
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
         eel.takecommand()()
     });
+
+    // Background wake word listener
+    function backgroundWakeListener() {
+        eel.background_listen()(function(result) {
+            if (result && result.toLowerCase().includes('lumina')) {
+                $("#Oval").attr("hidden", true);
+                $("#SiriWave").attr("hidden", false);
+                eel.takecommand()();
+            }
+            // Continue listening in background
+            setTimeout(backgroundWakeListener, 1000);
+        });
+    }
+    backgroundWakeListener();
 
 });
