@@ -25,13 +25,11 @@
 
 <body>
     <div class="container">
-        <section id="Oval" class="mb-4" >
-            <div class="row" style="margin:0;">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
-                        <canvas id="canvasOne" width="700" height="420" style="position: absolute;"></canvas>
-
+        <section id="Oval">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="particle-container">
+                        <canvas id="canvasOne"></canvas>
                         <div id="Hood">
                             <div class="square">
                                 <span class="circle"></span>
@@ -40,21 +38,21 @@
                             </div>
                         </div>
                     </div>
-                    <h5 class="text-light text text-center">Ask me anything</h5>
+                    <h5 class="text-light text text-center mb-3" style="font-size: 16px;">Ask me anything</h5>
 
-                    <div class="col-md-12 mt-4 pt-4">
+                    <div class="px-2 mt-2">
                         <div class="text-center">
-                            <div id="TextInput" class="d-flex">
-
+                            <div id="TextInput">
                                 <input type="text" class="input-field" name="chatbox" id="chatbox"
                                     placeholder="type here ... ">
-                                <button id="SendBtn" class="glow-on-hover" hidden><i class="bi bi-send"></i></button>
-                                <button id="MicBtn" class="glow-on-hover"><i class="bi bi-mic"></i></button>
-                                <button id="ChatBtn" class="glow-on-hover" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
-                                        class="bi bi-chat-dots"></i></button>
-                                <button id="SettingsBtn" class="glow-on-hover"><i class="bi bi-gear"></i></button>
-
+                                <div class="d-flex gap-1">
+                                    <button id="SendBtn" class="glow-on-hover" hidden><i class="bi bi-send"></i></button>
+                                    <button id="MicBtn" class="glow-on-hover"><i class="bi bi-mic"></i></button>
+                                    <button id="ChatBtn" class="glow-on-hover" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                                            class="bi bi-chat-dots"></i></button>
+                                    <button id="SettingsBtn" class="glow-on-hover"><i class="bi bi-gear"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -66,18 +64,17 @@
             </div>
         </section>
 
-        <section id="SiriWave" class="mb-4" hidden>
-            <div class="container-fluid" style="padding:0;">
-                <div class="row" style="margin:0;">
-                    <div class="col-12" style="padding:0;">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 60vh;">
-                            <ul class="siri-message" style="font-size: 1.1rem; color: #fff; list-style: none; padding-left: 0; margin-bottom: 12px; width: 100%; text-align: center;"></ul>
+        <section id="SiriWave" class="mb-2" hidden>
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 45vh;">
+                            <ul class="siri-message"></ul>
                             <div id="siri-container"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
 

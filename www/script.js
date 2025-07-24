@@ -1,6 +1,6 @@
 window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 140;
-var radius_sp = 1;
+var sphereRad = 110; // Reduced for better fit within square
+var radius_sp = 0.9; // Slightly reduced scale
 //for debug messages
 var Debugger = function () { };
 Debugger.log = function (message) {
@@ -79,10 +79,12 @@ function canvasApp() {
 		rgbString = "rgba(" + r + "," + g + "," + b + ","; //partial string for color which will be completed by appending alpha value.
 		particleAlpha = 1; //maximum alpha
 
-		displayWidth = theCanvas.width;
-		displayHeight = theCanvas.height;
+		displayWidth = 280;  // Match square width
+		displayHeight = 280; // Match square height
+		theCanvas.width = displayWidth;
+		theCanvas.height = displayHeight;
 
-		fLen = 320; //represents the distance from the viewer to z=0 depth.
+		fLen = 320; // Adjusted for better depth perception
 
 		//projection center coordinates sets location of origin
 		projCenterX = displayWidth / 2;
@@ -95,20 +97,20 @@ function canvasApp() {
 		recycleBin = {};
 
 		//random acceleration factors - causes some random motion
-		randAccelX = 0.1;
-		randAccelY = 0.1;
-		randAccelZ = 0.1;
+		randAccelX = 0.08;  // Reduced for more controlled movement
+		randAccelY = 0.08;  // Reduced for more controlled movement
+		randAccelZ = 0.08;  // Reduced for more controlled movement
 
-		gravity = -0; //try changing to a positive number (not too large, for example 0.3), or negative for floating upwards.
+		gravity = -0; //keeping zero gravity for floating effect
 
-		particleRad = 1.8;
+		particleRad = 1.6;  // Slightly smaller particles
 
 		sphereCenterX = 0;
 		sphereCenterY = 0;
 		sphereCenterZ = -3 - sphereRad;
 
 		//alpha values will lessen as particles move further back, causing depth-based darkening:
-		zeroAlphaDepth = -750;
+		zeroAlphaDepth = -650;  // Adjusted for better visibility
 
 		turnSpeed = 0.5 * Math.PI / 1200; //the sphere will rotate at this speed (one complete rotation every 1600 frames).
 		turnAngle = 0; //initial angle
